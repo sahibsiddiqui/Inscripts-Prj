@@ -1,12 +1,51 @@
-# React + Vite
+# InScripts React Spreadsheet Prototype
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A static, front-end–only React app that mimics the InScripts intern assignment spreadsheet view.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** (JavaScript)
+- **Vite** (dev server & build)
+- **Tailwind CSS** (utility-first styling)
+- **Public JSON** (`/public/data.json`) for sample data
 
-## Expanding the ESLint configuration
+## Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Clone the repo**
+    - git clone https://github.com/your-username/inscripts-spreadsheet.git
+    - cd inscripts-spreadsheet
+2. **Install dependencies**
+    - npm install
+3. **Run locally**
+    - npm run dev
+    - Open http://localhost:5173 in your browser.
+
+## Project Structure
+    public/
+      └─ data.json         # Sample spreadsheet data
+    src/
+      components/
+        ├─ Toolbar.jsx     # Top action bar
+        ├─ Tabs.jsx        # Bottom filter tabs
+        ├─ Spinner.jsx     # Loading indicator
+        └─ Spreadsheet.jsx # Main table with editing & navigation
+      App.jsx              # Layout wrapper
+      index.css            # Tailwind imports
+      main.jsx             # React entry
+    tailwind.config.js     # Custom colors & fonts
+
+## Features
+    Toolbar with “Hide fields”, “Sort”, “Filter”, “Cell view”, “Import”, “Export”, “Share”, “New Action”
+    Editable cells: double‑click to edit, Enter or blur to save
+    Keyboard navigation: arrow keys to move cell focus
+    Status & Priority styling: color‑coded badges and text
+    Filter tabs: “All Orders”, “Pending”, “Reviewed”, “Arrived”, “+”
+    Responsive full‑window layout
+    JSON data fetch with loading spinner
+
+## Deployment
+    We recommend deploying via Vercel:
+    Push your repo to GitHub.
+    Go to https://vercel.com/new, import the repo.
+    Accept defaults and click Deploy.
+    Share the live URL (e.g. https://inscripts-spreadsheet.vercel.app).
